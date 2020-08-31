@@ -1,0 +1,444 @@
+{
+	"info": {
+		"_postman_id": "dd2e3bbe-c4ea-4b33-8c4f-f3f21a88ddbd",
+		"name": "Movie-Booking-System",
+		"description": "Books movie Tickets for theatres",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "book ticket",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"abcd\",\r\n    \"phoneNumber\": 1234567890,\r\n    \"timing\": \"10-9-2020 16:01\"\r\n}"
+				},
+				"url": {
+					"raw": "http://127.0.0.1:5000/book",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"book"
+					]
+				},
+				"description": "## Books a tickets by \"name\", \"phoneNumber\", \"timing\".\r\n## Return json if booked\r\n## returns 'error_message' in case of error"
+			},
+			"response": [
+				{
+					"name": "book ticket",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"abcd\",\r\n    \"phoneNumber\": 1234567890,\r\n    \"timing\": \"10-9-2020 16:01\"\r\n}"
+						},
+						"url": {
+							"raw": "http://127.0.0.1:5000/book",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "5000",
+							"path": [
+								"book"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Content-Length",
+							"value": "138"
+						},
+						{
+							"key": "Server",
+							"value": "Werkzeug/0.14.1 Python/3.7.0"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 31 Aug 2020 05:06:13 GMT"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"id\": \"b13f7902-eb47-11ea-af51-28f10e417c44\",\n    \"name\": \"abcd\",\n    \"phoneNumber\": \"1234567890\",\n    \"timing\": \"2020-09-10T16:01:00\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Update  ticket timing",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"timing\": \"10-9-2020 16:01\"\r\n}"
+				},
+				"url": {
+					"raw": "http://127.0.0.1:5000/book/b13f7902-eb47-11ea-af51-28f10e417c44",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"book",
+						"b13f7902-eb47-11ea-af51-28f10e417c44"
+					]
+				},
+				"description": "# Updates ticket timings by \"id\", \"timing\"\r\ntake id in link and timing in json.\r\n# Return json if booked\r\n# returns 'error_message' in case of error"
+			},
+			"response": [
+				{
+					"name": "Update  ticket timing",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"timing\": \"10-9-2020 16:01\"\r\n}"
+						},
+						"url": {
+							"raw": "http://127.0.0.1:5000/book/b13f7902-eb47-11ea-af51-28f10e417c44",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "5000",
+							"path": [
+								"book",
+								"b13f7902-eb47-11ea-af51-28f10e417c44"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Content-Length",
+							"value": "138"
+						},
+						{
+							"key": "Server",
+							"value": "Werkzeug/0.14.1 Python/3.7.0"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 31 Aug 2020 05:06:31 GMT"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"id\": \"b13f7902-eb47-11ea-af51-28f10e417c44\",\n    \"name\": \"abcd\",\n    \"phoneNumber\": \"1234567890\",\n    \"timing\": \"2020-09-10T16:01:00\"\n}"
+				}
+			]
+		},
+		{
+			"name": "view all the tickets",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:5000/tickets/20-9-2020%2016:01",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"tickets",
+						"20-9-2020%2016:01"
+					]
+				},
+				"description": "# Returns all tickets for a particuular timing\r\ntakes id in link \r\n# Return json if correct\r\n# returns 'error_message' in case of error"
+			},
+			"response": [
+				{
+					"name": "view all the tickets",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:5000/tickets/20-9-2020%2016:01",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "5000",
+							"path": [
+								"tickets",
+								"20-9-2020%2016:01"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Content-Length",
+							"value": "2584"
+						},
+						{
+							"key": "Server",
+							"value": "Werkzeug/0.14.1 Python/3.7.0"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 31 Aug 2020 05:06:52 GMT"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"id\": \"c557934a-eb3f-11ea-9663-28f10e417c44\",\n        \"name\": \"sep\",\n        \"phoneNumber\": \"1234567890\",\n        \"timing\": \"2020-09-20T16:01:00\"\n    },\n    {\n        \"id\": \"ca67c2e8-eb3f-11ea-8281-28f10e417c44\",\n        \"name\": \"sep\",\n        \"phoneNumber\": \"1234567890\",\n        \"timing\": \"2020-09-20T16:01:00\"\n    },\n    {\n        \"id\": \"ceaf24b4-eb3f-11ea-ad81-28f10e417c44\",\n        \"name\": \"seps\",\n        \"phoneNumber\": \"1234567890\",\n        \"timing\": \"2020-09-20T16:01:00\"\n    },\n    {\n        \"id\": \"d2676824-eb3f-11ea-83b5-28f10e417c44\",\n        \"name\": \"seps\",\n        \"phoneNumber\": \"1234567890\",\n        \"timing\": \"2020-09-20T16:01:00\"\n    },\n    {\n        \"id\": \"d3166252-eb3f-11ea-b1b6-28f10e417c44\",\n        \"name\": \"seps\",\n        \"phoneNumber\": \"1234567890\",\n        \"timing\": \"2020-09-20T16:01:00\"\n    },\n    {\n        \"id\": \"d3c2ff1a-eb3f-11ea-b7c5-28f10e417c44\",\n        \"name\": \"seps\",\n        \"phoneNumber\": \"1234567890\",\n        \"timing\": \"2020-09-20T16:01:00\"\n    },\n    {\n        \"id\": \"d4bba602-eb3f-11ea-98e8-28f10e417c44\",\n        \"name\": \"seps\",\n        \"phoneNumber\": \"1234567890\",\n        \"timing\": \"2020-09-20T16:01:00\"\n    },\n    {\n        \"id\": \"d5a56b8c-eb3f-11ea-9756-28f10e417c44\",\n        \"name\": \"seps\",\n        \"phoneNumber\": \"1234567890\",\n        \"timing\": \"2020-09-20T16:01:00\"\n    },\n    {\n        \"id\": \"d65b352e-eb3f-11ea-9e3c-28f10e417c44\",\n        \"name\": \"seps\",\n        \"phoneNumber\": \"1234567890\",\n        \"timing\": \"2020-09-20T16:01:00\"\n    },\n    {\n        \"id\": \"d70b8d3a-eb3f-11ea-b0e3-28f10e417c44\",\n        \"name\": \"seps\",\n        \"phoneNumber\": \"1234567890\",\n        \"timing\": \"2020-09-20T16:01:00\"\n    },\n    {\n        \"id\": \"d83bb0be-eb3f-11ea-837d-28f10e417c44\",\n        \"name\": \"seps\",\n        \"phoneNumber\": \"1234567890\",\n        \"timing\": \"2020-09-20T16:01:00\"\n    },\n    {\n        \"id\": \"d94cbd38-eb3f-11ea-9c57-28f10e417c44\",\n        \"name\": \"seps\",\n        \"phoneNumber\": \"1234567890\",\n        \"timing\": \"2020-09-20T16:01:00\"\n    },\n    {\n        \"id\": \"da183f5a-eb3f-11ea-b26b-28f10e417c44\",\n        \"name\": \"seps\",\n        \"phoneNumber\": \"1234567890\",\n        \"timing\": \"2020-09-20T16:01:00\"\n    },\n    {\n        \"id\": \"dabc1c4a-eb3f-11ea-b781-28f10e417c44\",\n        \"name\": \"seps\",\n        \"phoneNumber\": \"1234567890\",\n        \"timing\": \"2020-09-20T16:01:00\"\n    },\n    {\n        \"id\": \"dd3ae49c-eb3f-11ea-83e8-28f10e417c44\",\n        \"name\": \"seps\",\n        \"phoneNumber\": \"1234567890\",\n        \"timing\": \"2020-09-20T16:01:00\"\n    },\n    {\n        \"id\": \"e0ab74ee-eb3f-11ea-96a1-28f10e417c44\",\n        \"name\": \"sept\",\n        \"phoneNumber\": \"1234567890\",\n        \"timing\": \"2020-09-20T16:01:00\"\n    },\n    {\n        \"id\": \"e1ee487a-eb3f-11ea-88d5-28f10e417c44\",\n        \"name\": \"sept\",\n        \"phoneNumber\": \"1234567890\",\n        \"timing\": \"2020-09-20T16:01:00\"\n    }\n]"
+				}
+			]
+		},
+		{
+			"name": "get users",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:5000/user/c557934a-eb3f-11ea-9663-28f10e417c44",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"user",
+						"c557934a-eb3f-11ea-9663-28f10e417c44"
+					]
+				},
+				"description": "get users getails for a prticular ticket id."
+			},
+			"response": [
+				{
+					"name": "get users",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:5000/user/c557934a-eb3f-11ea-9663-28f10e417c44",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "5000",
+							"path": [
+								"user",
+								"c557934a-eb3f-11ea-9663-28f10e417c44"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Content-Length",
+							"value": "137"
+						},
+						{
+							"key": "Server",
+							"value": "Werkzeug/0.14.1 Python/3.7.0"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 31 Aug 2020 05:07:08 GMT"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"id\": \"c557934a-eb3f-11ea-9663-28f10e417c44\",\n    \"name\": \"sep\",\n    \"phoneNumber\": \"1234567890\",\n    \"timing\": \"2020-09-20T16:01:00\"\n}"
+				},
+				{
+					"name": "get users",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:5000/user/c557934a-eb3f-11ea-9663-28f10e417c44",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "5000",
+							"path": [
+								"user",
+								"c557934a-eb3f-11ea-9663-28f10e417c44"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Content-Length",
+							"value": "137"
+						},
+						{
+							"key": "Server",
+							"value": "Werkzeug/0.14.1 Python/3.7.0"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 31 Aug 2020 05:07:08 GMT"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"id\": \"c557934a-eb3f-11ea-9663-28f10e417c44\",\n    \"name\": \"sep\",\n    \"phoneNumber\": \"1234567890\",\n    \"timing\": \"2020-09-20T16:01:00\"\n}"
+				}
+			]
+		},
+		{
+			"name": "delete ticket",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:5000/book/c557934a-eb3f-11ea-9663-28f10e417c44",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"book",
+						"c557934a-eb3f-11ea-9663-28f10e417c44"
+					]
+				},
+				"description": "deletes a ticket by ticket id."
+			},
+			"response": [
+				{
+					"name": "delete ticket",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:5000/book/c557934a-eb3f-11ea-9663-28f10e417c44",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "5000",
+							"path": [
+								"book",
+								"c557934a-eb3f-11ea-9663-28f10e417c44"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Content-Length",
+							"value": "137"
+						},
+						{
+							"key": "Server",
+							"value": "Werkzeug/0.14.1 Python/3.7.0"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 31 Aug 2020 05:07:46 GMT"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"id\": \"c557934a-eb3f-11ea-9663-28f10e417c44\",\n    \"name\": \"sep\",\n    \"phoneNumber\": \"1234567890\",\n    \"timing\": \"2020-09-20T16:01:00\"\n}"
+				}
+			]
+		}
+	],
+	"protocolProfileBehavior": {}
+}
