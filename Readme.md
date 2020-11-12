@@ -1,2 +1,2 @@
 ## Books Movie tickets
-## Detailed Documentaion Link :- https://documenter.getpostman.com/view/11630646/TVCcYUxG
+## Api Usage :- https://documenter.getpostman.com/view/11630646/TVCcYUxG
